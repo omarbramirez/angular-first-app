@@ -58,6 +58,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
@@ -70,6 +71,7 @@
   .content {
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
     width: 100%;
     max-width: 700px;
     margin-bottom: 3rem;
@@ -154,10 +156,12 @@
   }
 
   img[alt="siegmeyer"]{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 2ssssss00px;
     border-radius: 100%;
   }
+
+
 
   @media screen and (max-width: 650px) {
     .content {
