@@ -1,2 +1,11 @@
 <p>product-detail works!</p>
-<p [ngStyle]="{'background-color': color}">{{producto}} {{color}}</p>
+<ng-container *ngIf="loading">
+    <p>{{producto?.producto}}</p>
+    <p>{{producto?.id}}</p>
+    <p [ngStyle]="{'color': color}">{{producto?.precio | currency}}</p>
+    <p *ngIf="producto?.descripcion">{{producto?.descripcion}}</p>
+</ng-container>
+
+<ng-container *ngIf="!loading">
+    <i style="color: blueviolet;">Cargando...</i>
+</ng-container>

@@ -161,7 +161,9 @@
     border-radius: 100%;
   }
 
-
+  .red{
+    color: red;
+}
 
   @media screen and (max-width: 650px) {
     .content {
