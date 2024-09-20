@@ -29,3 +29,4 @@ export class ProductDetailComponent implements OnInit {
     }, 1000);
   }
 }
+ 

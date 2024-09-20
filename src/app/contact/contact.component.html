@@ -1,1 +1,24 @@
 <p>contact works!</p>
+
+<form [formGroup]="formularioContacto" (ngSubmit)="enviar()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre</label>
+    <input type="email" [ngClass]="{'is-invalid': hasErrors('nombre', 'required') || hasErrors('nombre', 'minlength')}" class="form-control" id="nombre" formControlName="nombre">
+    <div class="invalid-feedback" *ngIf="hasErrors('nombre', 'required')">Nombre requerido</div>
+    <div class="invalid-feedback" *ngIf="hasErrors('nombre', 'minlength')">Se necesitan más de tres carácteres</div>
+  </div>
+  <div class="mb-3">
+    <label for="tipoDni" class="form-label" >Tipo de DNI:</label>
+    <select class="form-select" id="tipoDni" formControlName="tipoDni">
+      <option value="1">DNI</option>
+      <option value="2">Pasaporte</option>
+      <option value="3">Licencia</option>
+    </select>
+  </div>
+  <app-dni [tipoDni] = "tipoDni"/>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" formControlName="email">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
