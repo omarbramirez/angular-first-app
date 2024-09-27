@@ -1,20 +1,16 @@
-<p>product works!</p>
-<table>
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Producto</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Detalle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let product of productsList">
-            <th scope="row">{{product.id}}</th>
-            <td>{{product.producto}}</td>
-            <td [ngClass]="{'red': product.precio > 5}">{{product.precio}}</td>
-            <button type="button" class="btn btn-outline-primary" [routerLink]="['/products', product.id]">click</button>
-
-        </tr>
-    </tbody>
-</table>
+<div>
+    <div *ngIf="data$ | async as data">
+    <table border="1">
+    <tr>
+    <td>Data from API</td>
+  </tr>
+  <tr *ngFor="let product of data">
+    <td>{{product.title}}</td>
+    <td>
+      <img src="{{product.image}}" alt={{product.title}} style="width: 200px">
+    </td>
+  </tr>
+      </table>
+    </div>
+    
+  </div>
